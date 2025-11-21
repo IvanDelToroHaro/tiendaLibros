@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>LibrosMil</title>
+   <meta charset="UTF-8">
+   <title>Insert title here</title>
 </head>
 <body>
-	<form onsubmit="return false" id="formulario">
-		<ul>
-			<li>Don Quijote 15€</li>
-			<li>Geronimo Stilton 5€</li>
-			<li>3 Mosqueteros 20€</li>
-			<li>El señor de los anillos 25€</li>
-			<li>El hobbit 10€</li>
-		</ul>
+   <p id="saldo">
+       <!-- Lugar para escribir tu saldo virtual -->
+   </p>
+   <form onsubmit="return false">
+       <fieldset>
+       <legend>Productos</legend>
+           <select name="listaLibros" id="seleccionLibros">
+               <option selected disabled value="0">Elija el libro</option>
+               <option value="1">Libro1</option>
+               <option value="2">Libro2</option>
+               <option value="3">Libro3</option>
+           </select>
+       </fieldset>
+       <fieldset>
+           <legend>Opciones</legend>
+           <label>Cantidad:
+               <input name="cantidad" id="cantidad" type="number" min="1">
+           </label>
+       </fieldset>
+       <input type="checkbox" id="validacion" onchange="confirmar()">
+       <input type="submit" onclick="agregarLibro()" id="boton" disabled>
+       <input type="reset">
+   </form>
+   
+   <ul id="lista">
+       <!--Lista de acciones de la página -->
+   </ul>
 
-		<select name="menu" id="seleccionable">
-			<option selected disabled value="">Seleccione libro</option>
-			<option value="1">Don Quijote</option>
-			<option value="2">Geronimo Stilton</option>
-			<option value="3">3 Mosqueteros</option>
-			<option value="4">El señor de los anillos</option>
-			<option value="5">El hobbit</option>
 
-		</select> <label>Cantidad <input type="number" id="cantidad">
-		</label> <input type="submit" onclick="agregarLibro()"> <input
-			type="reset">
-	</form>
 
-	<ul id="lista"></ul>
 
-	<p>Saldo total</p>
-	<p id="saldo">100</p>
-	<script src="script.js"></script>
+<script src="script.js"> </script>
 </body>
 </html>
